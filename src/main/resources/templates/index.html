@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en"  xmlns:th ="www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Title</title>
+</head>
+<body>
+<h1> Dave's List</h1>
+
+<ul th:each="listsg : ${lists}">
+    <li th:inline="text"><a th:href="@{/detail}">[[${listsg.listName}]]</a></li>
+    <li th:inline="text">[[${listsg.address}]]</li>
+    <li th:inline="text">[[${listsg.state}]]</li>
+    <li th:inline="text">[[${listsg.city}]]</li>
+    <li th:inline="text">[[${listsg.price}]]</li>
+    <li th:if="${listsg.isRented}">is rented</li>
+    <li th:unless="${listsg.isRented}"><a th:href="@{/rent/{id}(id=${listsg.id})}">To be rented</a></li>
+
+</ul>
+<a th:href="@{/add}">Add lists</a>
+</body>
+</html>

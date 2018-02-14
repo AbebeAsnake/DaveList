@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Title</title>
+    <link rel="stylesheet" href="../static/css/bootstrap.css">
+    <script src="../static/js/bootstrap.js"></script>
+    <script src="../static/js/bootstrap.min.js"></script>
+</head>
+<body>
+<form action="#" th:action="@{/process}" th:object="${lists}" method="post">
+    <input type="hidden" th:field="*{id}"/>
+    <label>List Name</label><input type="text" th:field="*{listName}"/><br/>
+    <label>Address</label><input type="text" th:field="*{address}"/><br/>
+    <label>State</label><input type="text" th:field="*{state}"/><br/>
+    <label>city</label><input type="text" th:field="*{city}"/><br/>
+    <label>Price</label><input type="number" th:field="*{price}"/><br/>
+    <fieldset>
+        <legend>details</legend>
+        <div>
+            <input type="checkbox" id="yes" name="bathroom" value="yes" th:field="*{bathrooms}"/>
+            <label for="yes">Bathroom</label>
+        </div>
+        <div>
+            <input type="checkbox" id="wifi" name="wifi" value="yes" th:field="*{wifi}"/>
+            <label for="wifi">wifi</label>
+        </div>
+        Cable
+        <select name="Cable" >
+            <option value="none" th:field="*{cable}">none</option>
+            <option value="basic" th:field="*{cable}">basic</option>
+            <option value="premium" th:field="*{cable}">premium</option>
+        </select>
+        <label>Description</label>
+<input type="text" th:field="*{description}"/>
+        <label>Rules</label>
+        <input type="text" th:field="*{rules}"/>
+    </fieldset>
+
+    <input type="submit" value="submit"/>
+
+</form>
+
+</body>
+</html>
