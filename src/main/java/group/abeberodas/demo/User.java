@@ -1,6 +1,8 @@
 package group.abeberodas.demo;
 import javax.persistence.*;
 import java.util.Collection;
+import java.util.HashSet;
+
 @Entity
 public class User {
     @Id
@@ -33,6 +35,7 @@ public class User {
     }
 
     public User() {
+        this.roles= new HashSet<>();
     }
 
 
@@ -98,5 +101,9 @@ public class User {
 
     public void setRoles(Collection<Role> roles) {
         this.roles = roles;
+    }
+
+    public void addRole(Role r){
+        this.roles.add(r);
     }
 }

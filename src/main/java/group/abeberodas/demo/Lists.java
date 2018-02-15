@@ -17,6 +17,16 @@ public class Lists {
     private String state;
     private String city;
 
+    public String getListingType() {
+        return listingType;
+    }
+
+    public void setListingType(String listingType) {
+        this.listingType = listingType;
+    }
+
+    private String listingType;
+
     public String getWifi() {
         return wifi;
     }
@@ -49,6 +59,7 @@ public class Lists {
         this.description = description;
         this.isRented = isRented;
         this.bathrooms = bathrooms;
+        this.listingType=listingType;
     }
 
     public void setRules(String rules) {
@@ -84,6 +95,7 @@ public class Lists {
         this.isRented = false;
         this.bathrooms="no";
         this.wifi="no";
+        this.listingType="public";
     }
 
 
